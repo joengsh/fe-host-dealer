@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('./assets/font/Barlow-Regular.ttf') format('truetype');
+}
+
+html,
+body,
+#root {
+  background-color: black;
+  height: 100%;
+}
