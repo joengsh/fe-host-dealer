@@ -1,38 +1,55 @@
-import nodeLogo from "./assets/node.svg"
-import { useState } from 'react'
-import './App.scss'
-import Dice from "./components/dice"
+import { observer } from 'mobx-react-lite'
+import React, { useEffect } from 'react'
 
-console.log('[App.tsx]', `Hello world from Electron ${process.versions.electron}!`)
+import useKeyboard from '@/hooks/use-keyboard'
+import useSystem from '@/hooks/use-system'
+import Routes from '@/routes'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { ipcRenderer } from 'electron'
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://github.com/electron-vite/electron-vite-react" target="_blank">
-          <img src="./electron-vite.svg" className="logo" alt="Electron + Vite logo" />
-        </a>
-      </div>
-      <h1>Electron + Vite + React</h1>
-      <Dice value={1} className='w-5 h-5'/>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Electron + Vite logo to learn more
-      </p>
-      <div className="flex-center">
-        Place static files into the<code>/public</code> folder <img style={{ width: "5em" }} src={nodeLogo} alt="Node logo" />
-      </div>
-    </div>
+const {
+  invoke,
+  send,
+} = ipcRenderer
+
+const App: React.FC = observer(() => {
+  const system = useSystem()
+
+  // game config
+  useEffect(() => {
+    void (async function() {
+      const { isDev } =
+        await invoke('get-system-status')
+      const config = await invoke('get-dealer-config')
+
+      if (isDev) {
+        system.isDev = isDev
+      }
+
+      const path = await invoke('get-dealer-config-path')
+      console.log('Config path', path)
+
+      system.config = config
+    })()
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (window.location.hash !== '#/') {
+      window.location.hash = '#/'
+    }
+  }, [])
+
+  useKeyboard('shift d', () =>
+    send('open-dev-tools'),
   )
-}
+
+  useKeyboard('ctrl shift k', () =>
+    send('terminate'),
+  )
+
+  return <Routes />
+})
 
 export default App

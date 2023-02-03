@@ -1,76 +1,78 @@
-# electron-vite-react
+# fe-host-dealer
 
-[![awesome-vite](https://awesome.re/mentioned-badge.svg)](https://github.com/vitejs/awesome-vite)
-![GitHub stars](https://img.shields.io/github/stars/caoxiemeihao/vite-react-electron?color=fa6470)
-![GitHub issues](https://img.shields.io/github/issues/caoxiemeihao/vite-react-electron?color=d8b22d)
-![GitHub license](https://img.shields.io/github/license/caoxiemeihao/vite-react-electron)
-[![Required Node.JS >= 14.18.0 || >=16.0.0](https://img.shields.io/static/v1?label=node&message=14.18.0%20||%20%3E=16.0.0&logo=node.js&color=3f893e)](https://nodejs.org/about/releases)
+## Getting Started
 
-English | [简体中文](README.zh-CN.md)
+```bash
+# install
+yarn
 
-## 👀 Overview
+# develop
+yarn dev
 
-📦 Ready out of the box  
-🎯 Based on the official [template-react-ts](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts), project structure will be familiar to you  
-🌱 Easily extendable and customizable  
-💪 Supports Node.js API in the renderer process  
-🔩 Supports C/C++ native addons  
-🐞 Debugger configuration included  
-🖥 Easy to implement multiple windows  
-
-## 🛫 Quick start
-
-```sh
-npm create electron-vite
+# build
+yarn build
 ```
 
-![electron-vite-react.gif](/public/electron-vite-react.gif)
+## Sample card value
 
-## 🐞 Debug
+**Overview**
 
-![electron-vite-react-debug.gif](/public/electron-vite-react-debug.gif)
+```
+Scanner 1: AHA, AH2, AH3 etc......
+Scanner 2: BHA, BH2, BH3 etc......
+Scanner 3: CHA, CH2, CH3 etc......
+Scanner 4: DHA, DH2, DH3 etc......
+Scanner 5: EHA, EH2, EH3 etc......
+Scanner 6: FHA, FH2, FH3 etc......
 
-## 📂 Directory structure
+Heart: HA, H2, H3 etc....... H0, HJ, HQ, HK
+Spade: SA, S2, S3 etc...... S0, SJ, SQ, SK
+Club: CA, C2, C3 etc....... C0, CJ, CQ, CK
+Diamond: DA, D2, D3 etc...... D0, DJ, DQ, DK
 
-Familiar React application structure, just with `electron` folder on the top :wink:  
-*Files in this folder will be separated from your React application and built into `dist-electron`*  
-
-```tree
-├── electron                                 Electron-related code
-│   ├── main                                 Main-process source code
-│   └── preload                              Preload-scripts source code
-│
-├── release                                  Generated after production build, contains executables
-│   └── {version}
-│       ├── {os}-{os_arch}                   Contains unpacked application executable
-│       └── {app_name}_{version}.{ext}       Installer for the application
-│
-├── public                                   Static assets
-└── src                                      Renderer source code, your React application
 ```
 
-## 🚨 Be aware
+Set 1 (Need Extra):
 
-This template integrates Node.js API to the renderer process by default. If you want to follow **Electron Security Concerns** you might want to disable this feature. You will have to expose needed API by yourself.  
+```
+AS2
+BD3
 
-To get started, remove the option as shown below. This will [modify the Vite configuration and disable this feature](https://github.com/electron-vite/vite-plugin-electron-renderer#config-presets-opinionated).
+DH6
+EC4
 
-```diff
-# vite.config.ts
-
-export default {
-  plugins: [
-    ...
--   // Use Node.js API in the Renderer-process
--   renderer({
--     nodeIntegration: true,
--   }),
-    ...
-  ],
-}
+EXTRA:
+CC4
+FC7
 ```
 
-## ❔ FAQ
+Set 2 (No need extra):
 
-- [dependencies vs devDependencies](https://github.com/electron-vite/vite-plugin-electron-renderer#dependencies-vs-devdependencies)
-- [C/C++ addons, Node.js modules - Pre-Bundling](https://github.com/electron-vite/vite-plugin-electron-renderer#dependency-pre-bundling)
+```
+AS5
+BD3
+
+DH2
+EC4
+```
+
+Set 3 (with Red Card):
+
+***RC stands for Red Card***
+
+```
+ARC
+BRC
+
+DRC
+ERC
+```
+
+## Overview
+
+Built with `vert` (vite-electron-react-tailwind)
+
+Forked from **[vite-react-electron](https://github.com/caoxiemeihao/vite-react-electron)** as of commit `7d92423`
+
+- All files are built via `Vite`, it is super fast compared to Webpack.
+

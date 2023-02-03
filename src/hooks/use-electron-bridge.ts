@@ -1,3 +1,4 @@
+import IpcRendererHelper from '@/utils/IpcRendererHelper'
 import { IpcRendererEvent } from 'electron'
 import {
   useEffect,
@@ -12,7 +13,7 @@ interface useElectronBridgeReturnInterface {
   event: string
 }
 
-const { on } = window.bridge.ipcRenderer
+const { on } = IpcRendererHelper
 
 const useElectronBridge = (
   event: string,

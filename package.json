@@ -37,7 +37,6 @@
     "babel-loader": "^8.3.0",
     "electron": "^22.0.3",
     "electron-builder": "^23.6.0",
-    "electron-store": "^8.1.0",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -53,10 +52,18 @@
     "node": "^14.18.0 || >=16.0.0"
   },
   "dependencies": {
+    "@tanstack/react-location": "^3.7.4",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
+    "electron-store": "^8.1.0",
     "lodash": "^4.17.21",
     "mobx": "^6.7.0",
-    "mobx-react-lite": "^3.4.0"
+    "mobx-react-lite": "^3.4.0",
+    "react-countdown-hook": "^1.1.1"
+  },
+  "env": {
+    "//": "Note: used in build scripts",
+    "HOST": "127.0.0.1",
+    "PORT": 3344
   }
 }
