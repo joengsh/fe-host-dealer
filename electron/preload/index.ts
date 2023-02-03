@@ -94,19 +94,3 @@ window.onmessage = (ev) => {
 }
 
 setTimeout(removeLoading, 4999)
-
-contextBridge.exposeInMainWorld('bridge', {
-  __dirname,
-  __filename,
-  fs,
-  path,
-  ipcRenderer: {
-    on: <T,>(channel: string, handler:  (_: IpcRendererEvent, e: T) => void) => {
-      ipcRenderer.on(channel, handler);
-      return () => ipcRenderer.removeListener(channel, handler);
-    },
-    invoke: ipcRenderer.invoke,
-    send: ipcRenderer.send
-  },
-  removeLoading,
-})

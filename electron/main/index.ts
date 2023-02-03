@@ -2,6 +2,9 @@ import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { release } from 'node:os'
 import { join } from 'node:path'
 
+import './services/dealer-config'
+import './services/system'
+
 // The built directory structure
 //
 // ├─┬ dist-electron
