@@ -1,7 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 
-import { version } from '@/../../package.json'
 import logo from '@/assets/logo.png'
 // import Logout from '@/components/logout'
 // import Pitboss from '@/components/pitboss'
@@ -19,7 +18,7 @@ const Footer: React.FC = observer(() => {
         {/* { system.dealer && system.isLoggedIn && <Logout /> }
         { system.isLoggedIn && <Pitboss /> } */}
         <span className='basis-full text-right text-3xl'>
-          { `v${ version }` }
+          { `v${ import.meta.env.PACKAGE_VERSION }` }
         </span>
         {
           (system.tableId || system.hostId) && (

@@ -1,0 +1,101 @@
+{
+	"env": "development",
+	"gameConfig": {
+		"BAL": {
+			"betCounter": 0,
+			"hostId": "",
+			"imageRecognition": {
+				"url": ""
+			},
+			"name": "God Of Fortune - Baccarat"
+		},
+		"BAA": {
+			"betCounter": 0,
+			"hostId": "",
+			"imageRecognition": {
+				"url": ""
+			},
+			"name": "Traditional Baccarat"
+		},
+		"BAC": {
+			"betCounter": 0,
+			"hostId": "",
+			"imageRecognition": {
+				"url": ""
+			},
+			"name": "Classic Baccarat"
+		},
+		"BAM": {
+			"betCounter": 0,
+			"hostId": "",
+			"name": "Squeeze Baccarat"
+		},
+		"BAS": {
+			"betCounter": 0,
+			"hostId": "",
+			"imageRecognition": {
+				"url": ""
+			},
+			"name": "Speed Baccarat"
+		},
+		"DT": {
+			"betCounter": 0,
+			"hostId": "",
+			"imageRecognition": {
+				"url": ""
+			},
+			"name": "Dragon & Tiger"
+		},
+		"DTS": {
+			"betCounter": 0,
+			"hostId": "",
+			"imageRecognition": {
+				"url": ""
+			},
+			"name": "Speed Dragon & Tiger"
+		},
+		"LW": {
+			"betCounter": 0,
+			"hostId": "",
+			"name": "LuckyWheel"
+		},
+		"RO": {
+			"betCounter": 0,
+			"hostId": "",
+			"name": "Roulette",
+			"serialPort": "simulate"
+		},
+		"ROL": {
+			"betCounter": 0,
+			"hostId": "",
+			"name": "God Of Fortune - Roulette",
+			"serialPort": "simulate"
+		},
+		"DI": {
+			"betCounter": 0,
+			"hostId": "",
+			"name": "Sicbo"
+		},
+		"DIL": {
+			"betCounter": 0,
+			"hostId": "",
+			"name": "God Of Fortune - Sicbo"
+		},
+		"ZJH": {
+			"betCounter": 0,
+			"hostId": "",
+			"imageRecognition": {
+				"url": ""
+			},
+			"name": "Three Cards"
+		},
+		"OX": {
+			"betCounter": 0,
+			"hostId": "",
+			"imageRecognition": {
+				"url": ""
+			},
+			"name": "Bull Bull"
+		}
+	}
+}

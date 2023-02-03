@@ -20,13 +20,16 @@ export default defineConfig(({ command }) => {
         '@': path.join(__dirname, 'src')
       },
     },
+    define:  {
+      'import.meta.env.PACKAGE_VERSION': JSON.stringify(pkg.version)
+    },
     plugins: [
       react(),
       svgr(),
       electron({
         include: [
           'electron',
-          'src/types'
+          'src/types',
         ],
         transformOptions: {
           sourcemap,
