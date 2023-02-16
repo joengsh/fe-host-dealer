@@ -13,6 +13,11 @@ yarn dev
 yarn build
 ```
 
+## convertional commit message
+
+https://www.conventionalcommits.org/en/v1.0.0/ <br />
+https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional
+
 ## Sample card value
 
 **Overview**

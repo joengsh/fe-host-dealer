@@ -15,12 +15,15 @@
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
     "preview": "vite preview",
+    "prepare": "husky install",
     "e2e": "npx playwright test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@commitlint/cli": "^17.4.3",
+    "@commitlint/config-conventional": "^17.4.3",
     "@playwright/test": "^1.29.2",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
@@ -37,6 +40,7 @@
     "babel-loader": "^8.3.0",
     "electron": "^22.0.3",
     "electron-builder": "^23.6.0",
+    "husky": "^8.0.3",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
